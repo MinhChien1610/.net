@@ -1,0 +1,118 @@
+﻿<Window x:Class="Tuan_13.View.bai_2_4"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Tuan_13.View"
+             mc:Ignorable="d"
+             Width="850"
+             Height="500"
+             Background="White">
+
+    <Grid Margin="15">
+
+        <!-- Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- ===== FILTER ===== -->
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Môn học -->
+            <TextBlock Text="Môn học:"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0" />
+
+            <ComboBox Grid.Column="1"
+                      ItemsSource="{Binding ListMonHoc}"
+                      SelectedItem="{Binding SelectedFilterMon}" />
+
+            <!-- Năm học -->
+            <TextBlock Grid.Column="2"
+                       Text="Năm học:"
+                       VerticalAlignment="Center"
+                       Margin="15,0,10,0" />
+
+            <ComboBox Grid.Column="3"
+                      ItemsSource="{Binding ListNamHoc}"
+                      SelectedItem="{Binding SelectedFilterNam}" />
+
+            <!-- Học kỳ -->
+            <TextBlock Grid.Column="4"
+                       Text="Học kỳ:"
+                       VerticalAlignment="Center"
+                       Margin="15,0,10,0" />
+
+            <ComboBox Grid.Column="5"
+                      ItemsSource="{Binding ListHocKy}"
+                      SelectedItem="{Binding SelectedFilterHK}" />
+
+        </Grid>
+
+        <!-- ===== ACTIONS ===== -->
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="0,15,0,10">
+
+            <Button Content="Tải danh sách sinh viên"
+                    Padding="10,5"
+                    Command="{Binding LoadListCommand}" />
+
+            <Button Content="Lưu điểm"
+                    Padding="20,5"
+                    Margin="15,0,0,0"
+                    Command="{Binding SavePointsCommand}" />
+
+            <Button Content="In bảng điểm"
+                    Padding="20,5"
+                    Margin="15,0,0,0"
+                    Command="{Binding PrintReportCommand}" />
+
+        </StackPanel>
+
+        <!-- ===== DATA GRID ===== -->
+        <DataGrid Grid.Row="3"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding ListSinhVienNhapDiem}"
+                  CanUserAddRows="False">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Mã SV"
+                                    Binding="{Binding MaSV}"
+                                    IsReadOnly="True"
+                                    Width="100" />
+
+                <DataGridTextColumn Header="Họ tên"
+                                    Binding="{Binding HoTen}"
+                                    IsReadOnly="True"
+                                    Width="200" />
+
+                <DataGridTextColumn Header="Lớp"
+                                    Binding="{Binding Lop}"
+                                    IsReadOnly="True"
+                                    Width="100" />
+
+                <DataGridTextColumn Header="Điểm"
+                                    Binding="{Binding Diem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="*" />
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>

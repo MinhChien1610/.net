@@ -76,6 +76,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helper\BaseViewModel.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Model\KetQua.cs">
       <DependentUpon>QLSINHVIEN.tt</DependentUpon>
     </Compile>
@@ -106,6 +108,12 @@
     <Compile Include="Model\SinhVien.cs">
       <DependentUpon>QLSINHVIEN.tt</DependentUpon>
     </Compile>
+    <Compile Include="Report\BangDiemSinhVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BangDiemSinhVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\DanhsachSVtheoLop1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +133,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewModels\bai_1_14ViewModel.cs" />
+    <Compile Include="ViewModels\bai_2_4ViewModel.cs" />
     <Compile Include="View\bai_1.xaml.cs">
       <DependentUpon>bai_1.xaml</DependentUpon>
     </Compile>
@@ -133,6 +142,9 @@
     </Compile>
     <Compile Include="View\bai_2.xaml.cs">
       <DependentUpon>bai_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\bai_2_4.xaml.cs">
+      <DependentUpon>bai_2_4.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +164,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BangDiemSinhVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BangDiemSinhVien.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\DanhsachSVtheoLop.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -210,6 +226,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\bai_2_4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
