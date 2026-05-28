@@ -1,0 +1,53 @@
+﻿<Window x:Class="Tuan_13.View.bai_1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        mc:Ignorable="d"
+        Title="B1"
+        Height="500"
+        Width="900"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Thanh trên -->
+        <Border BorderBrush="#DCDCDC"
+                BorderThickness="1"
+                Padding="10"
+                Margin="0,0,0,10">
+
+            <DockPanel>
+
+                <TextBlock Text="DANH SÁCH SINH VIÊN"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center"/>
+
+                <Button Width="170"
+                        Height="32"
+                        Content="Show danh sách sinh viên"
+                        HorizontalAlignment="Right"
+                        DockPanel.Dock="Right"
+                        Click="Button_Click"/>
+            </DockPanel>
+        </Border>
+
+        <!-- Report -->
+        <Border Grid.Row="1"
+                BorderBrush="#DCDCDC"
+                BorderThickness="1">
+
+            <Viewer:CrystalReportsViewer x:Name="myreport"
+                                         HorizontalAlignment="Stretch"
+                                         VerticalAlignment="Stretch"/>
+        </Border>
+
+    </Grid>
+</Window>
