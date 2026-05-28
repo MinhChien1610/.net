@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLSINHVIENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KetQua">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+            <PropertyRef Name="MaMonHoc" />
+            <PropertyRef Name="NamHoc" />
+            <PropertyRef Name="HocKy" />
+          </Key>
+          <Property Name="MaSinhVien" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaMonHoc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NamHoc" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="HocKy" Type="int" Nullable="false" />
+          <Property Name="Diem" Type="float" />
+        </EntityType>
+        <EntityType Name="Khoa">
+          <Key>
+            <PropertyRef Name="MaKhoa" />
+          </Key>
+          <Property Name="MaKhoa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenKhoa" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Lop">
+          <Key>
+            <PropertyRef Name="MaLop" />
+          </Key>
+          <Property Name="MaLop" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaKhoa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MonHoc">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenMonHoc" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoTC" Type="int" />
+          <Property Name="TinhChat" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+          </Key>
+          <Property Name="MaSinhVien" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="MaLop" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__KetQua__MaMonHoc__4316F928">
+          <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+          <End Role="KetQua" Type="Self.KetQua" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MonHoc">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="KetQua">
+              <PropertyRef Name="MaMonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KetQua__MaSinhVi__412EB0B6">
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="1" />
+          <End Role="KetQua" Type="Self.KetQua" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SinhVien">
+              <PropertyRef Name="MaSinhVien" />
+            </Principal>
+            <Dependent Role="KetQua">
+              <PropertyRef Name="MaSinhVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lop_Khoa">
+          <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+          <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khoa">
+              <PropertyRef Name="MaKhoa" />
+            </Principal>
+            <Dependent Role="Lop">
+              <PropertyRef Name="MaKhoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SinhVien_Lop">
+          <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lop">
+              <PropertyRef Name="MaLop" />
+            </Principal>
+            <Dependent Role="SinhVien">
+              <PropertyRef Name="MaLop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLSINHVIENModelStoreContainer">
+          <EntitySet Name="KetQua" EntityType="Self.KetQua" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lop" EntityType="Self.Lop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__KetQua__MaMonHoc__4316F928" Association="Self.FK__KetQua__MaMonHoc__4316F928">
+            <End Role="MonHoc" EntitySet="MonHoc" />
+            <End Role="KetQua" EntitySet="KetQua" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KetQua__MaSinhVi__412EB0B6" Association="Self.FK__KetQua__MaSinhVi__412EB0B6">
+            <End Role="SinhVien" EntitySet="SinhVien" />
+            <End Role="KetQua" EntitySet="KetQua" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lop_Khoa" Association="Self.FK_Lop_Khoa">
+            <End Role="Khoa" EntitySet="Khoa" />
+            <End Role="Lop" EntitySet="Lop" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SinhVien_Lop" Association="Self.FK_SinhVien_Lop">
+            <End Role="Lop" EntitySet="Lop" />
+            <End Role="SinhVien" EntitySet="SinhVien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLSINHVIENModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KetQua">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+            <PropertyRef Name="MaMonHoc" />
+            <PropertyRef Name="NamHoc" />
+            <PropertyRef Name="HocKy" />
+          </Key>
+          <Property Name="MaSinhVien" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NamHoc" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HocKy" Type="Int32" Nullable="false" />
+          <Property Name="Diem" Type="Double" />
+          <NavigationProperty Name="MonHoc" Relationship="Self.FK__KetQua__MaMonHoc__4316F928" FromRole="KetQua" ToRole="MonHoc" />
+          <NavigationProperty Name="SinhVien" Relationship="Self.FK__KetQua__MaSinhVi__412EB0B6" FromRole="KetQua" ToRole="SinhVien" />
+        </EntityType>
+        <EntityType Name="Khoa">
+          <Key>
+            <PropertyRef Name="MaKhoa" />
+          </Key>
+          <Property Name="MaKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Lop" Relationship="Self.FK_Lop_Khoa" FromRole="Khoa" ToRole="Lop" />
+        </EntityType>
+        <EntityType Name="Lop">
+          <Key>
+            <PropertyRef Name="MaLop" />
+          </Key>
+          <Property Name="MaLop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Khoa" Relationship="Self.FK_Lop_Khoa" FromRole="Lop" ToRole="Khoa" />
+          <NavigationProperty Name="SinhVien" Relationship="Self.FK_SinhVien_Lop" FromRole="Lop" ToRole="SinhVien" />
+        </EntityType>
+        <EntityType Name="MonHoc">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenMonHoc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SoTC" Type="Int32" />
+          <Property Name="TinhChat" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KetQua" Relationship="Self.FK__KetQua__MaMonHoc__4316F928" FromRole="MonHoc" ToRole="KetQua" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+          </Key>
+          <Property Name="MaSinhVien" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="MaLop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KetQua" Relationship="Self.FK__KetQua__MaSinhVi__412EB0B6" FromRole="SinhVien" ToRole="KetQua" />
+          <NavigationProperty Name="Lop" Relationship="Self.FK_SinhVien_Lop" FromRole="SinhVien" ToRole="Lop" />
+        </EntityType>
+        <Association Name="FK__KetQua__MaMonHoc__4316F928">
+          <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+          <End Role="KetQua" Type="Self.KetQua" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MonHoc">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="KetQua">
+              <PropertyRef Name="MaMonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KetQua__MaSinhVi__412EB0B6">
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="1" />
+          <End Role="KetQua" Type="Self.KetQua" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SinhVien">
+              <PropertyRef Name="MaSinhVien" />
+            </Principal>
+            <Dependent Role="KetQua">
+              <PropertyRef Name="MaSinhVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lop_Khoa">
+          <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+          <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khoa">
+              <PropertyRef Name="MaKhoa" />
+            </Principal>
+            <Dependent Role="Lop">
+              <PropertyRef Name="MaKhoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SinhVien_Lop">
+          <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lop">
+              <PropertyRef Name="MaLop" />
+            </Principal>
+            <Dependent Role="SinhVien">
+              <PropertyRef Name="MaLop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLSINHVIENEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KetQua" EntityType="Self.KetQua" />
+          <EntitySet Name="Khoa" EntityType="Self.Khoa" />
+          <EntitySet Name="Lop" EntityType="Self.Lop" />
+          <EntitySet Name="MonHoc" EntityType="Self.MonHoc" />
+          <EntitySet Name="SinhVien" EntityType="Self.SinhVien" />
+          <AssociationSet Name="FK__KetQua__MaMonHoc__4316F928" Association="Self.FK__KetQua__MaMonHoc__4316F928">
+            <End Role="MonHoc" EntitySet="MonHoc" />
+            <End Role="KetQua" EntitySet="KetQua" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KetQua__MaSinhVi__412EB0B6" Association="Self.FK__KetQua__MaSinhVi__412EB0B6">
+            <End Role="SinhVien" EntitySet="SinhVien" />
+            <End Role="KetQua" EntitySet="KetQua" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lop_Khoa" Association="Self.FK_Lop_Khoa">
+            <End Role="Khoa" EntitySet="Khoa" />
+            <End Role="Lop" EntitySet="Lop" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SinhVien_Lop" Association="Self.FK_SinhVien_Lop">
+            <End Role="Lop" EntitySet="Lop" />
+            <End Role="SinhVien" EntitySet="SinhVien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLSINHVIENModelStoreContainer" CdmEntityContainer="QLSINHVIENEntities">
+          <EntitySetMapping Name="KetQua">
+            <EntityTypeMapping TypeName="QLSINHVIENModel.KetQua">
+              <MappingFragment StoreEntitySet="KetQua">
+                <ScalarProperty Name="MaSinhVien" ColumnName="MaSinhVien" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
+                <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+                <ScalarProperty Name="Diem" ColumnName="Diem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Khoa">
+            <EntityTypeMapping TypeName="QLSINHVIENModel.Khoa">
+              <MappingFragment StoreEntitySet="Khoa">
+                <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+                <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lop">
+            <EntityTypeMapping TypeName="QLSINHVIENModel.Lop">
+              <MappingFragment StoreEntitySet="Lop">
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MonHoc">
+            <EntityTypeMapping TypeName="QLSINHVIENModel.MonHoc">
+              <MappingFragment StoreEntitySet="MonHoc">
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="SoTC" ColumnName="SoTC" />
+                <ScalarProperty Name="TinhChat" ColumnName="TinhChat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinhVien">
+            <EntityTypeMapping TypeName="QLSINHVIENModel.SinhVien">
+              <MappingFragment StoreEntitySet="SinhVien">
+                <ScalarProperty Name="MaSinhVien" ColumnName="MaSinhVien" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -38,13 +38,20 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="sapbusinessobjects.wpf.viewer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -69,6 +76,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\KetQua.cs">
+      <DependentUpon>QLSINHVIEN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Khoa.cs">
+      <DependentUpon>QLSINHVIEN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Lop.cs">
+      <DependentUpon>QLSINHVIEN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MonHoc.cs">
+      <DependentUpon>QLSINHVIEN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSINHVIEN.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSINHVIEN.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSINHVIEN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSINHVIEN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLSINHVIEN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSINHVIEN.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SinhVien.cs">
+      <DependentUpon>QLSINHVIEN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Report\DanhsachSVtheoLop1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,8 +124,12 @@
       <DependentUpon>Report4.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ViewModels\bai_1_14ViewModel.cs" />
     <Compile Include="View\bai_1.xaml.cs">
       <DependentUpon>bai_1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\bai_1_14.xaml.cs">
+      <DependentUpon>bai_1_14.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\bai_2.xaml.cs">
       <DependentUpon>bai_2.xaml</DependentUpon>
@@ -124,6 +165,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report41.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\QLSINHVIEN.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLSINHVIEN.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QLSINHVIEN.edmx.diagram">
+      <DependentUpon>QLSINHVIEN.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,11 +182,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\QLSINHVIEN.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLSINHVIEN.Context.cs</LastGenOutput>
+      <DependentUpon>QLSINHVIEN.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\QLSINHVIEN.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLSINHVIEN.edmx</DependentUpon>
+      <LastGenOutput>QLSINHVIEN.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Page Include="View\bai_1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\bai_1_14.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
