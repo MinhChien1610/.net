@@ -1,0 +1,48 @@
+D:\.Net\Tuan_2\Tuan_2\bin\Debug\Tuan_2.exe.config
+D:\.Net\Tuan_2\Tuan_2\bin\Debug\Tuan_2.exe
+D:\.Net\Tuan_2\Tuan_2\bin\Debug\Tuan_2.pdb
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.csproj.AssemblyReference.cache
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_1.g.cs
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\App.g.cs
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2_MarkupCompile.cache
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2_MarkupCompile.lref
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_1.baml
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.g.resources
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.Properties.Resources.resources
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.csproj.GenerateResource.cache
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.csproj.CoreCompileInputs.cache
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.exe
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Tuan_2.pdb
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Themes\ThemeDark.baml
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\Themes\ThemeLight.baml
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_2.g.cs
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\App.baml
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_2.baml
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_3.g.cs
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_3.baml
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_4.g.cs
+D:\.Net\Tuan_2\Tuan_2\obj\Debug\bai_4.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\bin\Debug\Tuan_2.exe.config
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\bin\Debug\Tuan_2.exe
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\bin\Debug\Tuan_2.pdb
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.csproj.AssemblyReference.cache
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Themes\ThemeDark.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Themes\ThemeLight.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_1.g.cs
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_2.g.cs
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_3.g.cs
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_4.g.cs
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\App.g.cs
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2_MarkupCompile.cache
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2_MarkupCompile.lref
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\App.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_1.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_2.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_3.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\bai_4.baml
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.g.resources
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.Properties.Resources.resources
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.csproj.GenerateResource.cache
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.csproj.CoreCompileInputs.cache
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.exe
+C:\Users\nguyen dai tai\OneDrive\Desktop\Tuan_2\Tuan_2\obj\Debug\Tuan_2.pdb

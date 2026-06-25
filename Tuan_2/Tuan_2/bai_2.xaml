@@ -1,0 +1,35 @@
+﻿<Window x:Class="Tuan_2.bai_2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tuan_2"
+        mc:Ignorable="d"
+        Title="bai_2" Height="450" Width="800">
+      <StackPanel Background="{DynamicResource BackgroundColor}" VerticalAlignment="Top">
+        <TextBlock Text="Chọn Theme:"
+                       Foreground="{DynamicResource ForegroundColor}"
+                       FontSize="16">
+        </TextBlock>
+
+        <ComboBox x:Name="cboTheme"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Width="120"
+                      SelectionChanged="cboTheme_SelectionChanged">
+
+            <ComboBoxItem>Sáng</ComboBoxItem>
+            <ComboBoxItem>Tối</ComboBoxItem>
+
+        </ComboBox>
+
+        <Button Content="Nút mẫu"
+                    Width="120"
+                    Height="40"
+                    Background="{DynamicResource PrimaryButtonColor}"
+                    Foreground="{DynamicResource ForegroundColor}"
+                    FontWeight="Bold" Margin="5">
+        </Button>
+
+    </StackPanel>
+</Window>
