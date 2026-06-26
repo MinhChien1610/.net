@@ -1,0 +1,232 @@
+﻿<Window x:Class="Tuan_3.bai_5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="bai_5"
+        Width="1200"
+        Height="725"
+        WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="420"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,20,0">
+
+                <GroupBox Header="Thông tin cá nhân"
+                          FontSize="18"
+                          Padding="10"
+                          Margin="0,0,0,20">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Mã hồ sơ:" Grid.Row="0"/>
+                        <TextBox x:Name="txtMaHoSo"
+                                 Grid.Row="0"
+                                 Grid.Column="1"
+                                 Height="32"/>
+
+                        <Label Content="Họ tên:"
+                               Grid.Row="1"
+                               Margin="0,8,0,0"/>
+                        <TextBox x:Name="txtHoTen"
+                                 Grid.Row="1"
+                                 Grid.Column="1"
+                                 Height="32"
+                                 Margin="0,8,0,0"/>
+
+                        <Label Content="Giới tính:"
+                               Grid.Row="2"
+                               Margin="0,8,0,0"/>
+                        <StackPanel Grid.Row="2"
+                                    Grid.Column="1"
+                                    Orientation="Horizontal"
+                                    Margin="0,8,0,0">
+                            <RadioButton x:Name="rdNam"
+                                         GroupName="GioiTinh"
+                                         Content="Nam"
+                                         Margin="0,0,20,0"
+                                         VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="rdNu"
+                                         GroupName="GioiTinh"
+                                         Content="Nữ"
+                                         VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <Label Content="Ngày sinh:"
+                               Grid.Row="3"
+                               Margin="0,8,0,0"/>
+                        <DatePicker x:Name="dpNgaySinh"
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Height="32"
+                                    Margin="0,8,0,0"/>
+
+                        <Label Content="Phòng ban:"
+                               Grid.Row="4"
+                               Margin="0,8,0,0"/>
+                        <ComboBox x:Name="cbPhongBan"
+                                  Grid.Row="4"
+                                  Grid.Column="1"
+                                  Height="32"
+                                  Margin="0,8,0,0"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Thông tin ứng tuyển"
+                          FontSize="18"
+                          Padding="10">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Vị trí:" Grid.Row="0"/>
+                        <ComboBox x:Name="cbViTri"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  Height="32"/>
+
+                        <Label Content="Loại hợp đồng:"
+                               Grid.Row="1"
+                               Margin="0,8,0,0"/>
+
+                        <StackPanel Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="0,8,0,0">
+                            
+                            <RadioButton x:Name="rdThuViec"
+                                         VerticalContentAlignment="Center"
+                                         GroupName="HopDong"
+                                         Content="Thử việc"
+                                         Margin="0,5,0,0"/>
+                            
+                            <RadioButton x:Name="rdHopDongNam"
+                                         VerticalContentAlignment="Center"
+                                         GroupName="HopDong"
+                                         Content="Hợp đồng năm"
+                                         Margin="0,5,0,0"/>
+                            
+                            <RadioButton x:Name="rdChinhThuc"
+                                         VerticalContentAlignment="Center"
+                                         GroupName="HopDong"
+                                         Content="Chính thức"
+                                         Margin="0,5,0,0"/>
+                        </StackPanel>
+
+                        <Label Content="Ghi chú:"
+                               Grid.Row="2"
+                               Margin="0,8,0,0"/>
+
+                        <TextBox x:Name="txtGhiChu"
+                                 Grid.Row="2"
+                                 Grid.Column="1"
+                                 Height="70"
+                                 Margin="0,8,0,0"
+                                 AcceptsReturn="True"/>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+
+                <GroupBox Header="Hồ sơ và kỹ năng đính kèm"
+                          FontSize="18"
+                          Padding="10"
+                          Margin="0,0,0,20">
+
+                    <StackPanel>
+
+                        <GroupBox Header="Giấy tờ bắt buộc"
+                                  FontSize="16"
+                                  Margin="0,0,0,10">
+                            
+                            <WrapPanel Margin="10">
+                                <CheckBox x:Name="chkBangCap" Content="Bằng cấp" Margin="10" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="chkSucKhoe" Content="Giấy khám sức khỏe" Margin="10" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="chkTinHoc" Content="Chứng chỉ Tin học" Margin="10" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="chkNgoaiNgu" Content="Chứng chỉ Ngoại ngữ" Margin="10" VerticalContentAlignment="Center"/>
+                            </WrapPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="Giấy tờ nộp kèm khác"
+                                  FontSize="16"
+                                  Margin="0,0,0,10">
+                            <Grid Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="120"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="txtGiayToKhac"
+                                         Height="32"/>
+
+                                <Button x:Name="btnThem"
+                                        Content="Thêm"
+                                        Grid.Column="1"
+                                        Height="32"
+                                        Margin="10,0,0,0"
+                                        Click="btnThem_Click"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Danh sách giấy tờ đã nộp"
+                                  FontSize="16">
+                            <ListBox x:Name="lstGiayTo"
+                                     Height="160"
+                                     Margin="10"/>
+                        </GroupBox>
+
+                    </StackPanel>
+                </GroupBox>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Button x:Name="btnThoat"
+                            Click="BtnThoat_Click"
+                            Content="Thoát"
+                            Width="140"
+                            Height="40"
+                            Margin="10"/>
+
+                    <Button x:Name="btnTaiLai"
+                            Content="Tải lại"
+                            Width="140"
+                            Height="40"
+                            Margin="10"
+                            Click="BtnTaiLai_Click"/>
+
+                    <Button x:Name="btnNopHoSo"
+                            Content="Nộp hồ sơ"
+                            Width="140"
+                            Height="40"
+                            Margin="10"
+                            Click="btnNopHoSo_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

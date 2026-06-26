@@ -1,0 +1,178 @@
+﻿<Window x:Class="Tuan_3.bai_1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tuan_3"
+        mc:Ignorable="d"
+        Title="bai_1" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="187*"></ColumnDefinition>
+            <ColumnDefinition Width="613*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   FontFamily="Times New Roman"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Height="36" 
+                   Width="115">
+            Họ đệm:
+        </TextBlock>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="1"
+                   FontFamily="Times New Roman"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Height="36" 
+                   Width="115">
+            Tên:
+        </TextBlock>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="2"
+                   FontFamily="Times New Roman"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Height="36" 
+                   Width="115">
+            Giới tính:
+        </TextBlock>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="3"
+                   FontFamily="Times New Roman"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Height="36" 
+                   Width="115">
+            Ngoại ngữ:
+        </TextBlock>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="4"
+                   FontFamily="Times New Roman"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Height="36" 
+                   Width="115">
+            Quê quán:
+        </TextBlock>
+
+        <TextBox Grid.Row="0"
+                 Grid.Column="1" 
+                 Margin="36,20,36,20"
+                 x:Name="txt_hoDem"
+                 FontFamily="Times New Roman"
+                 FontSize="22"/>
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="1" 
+                 Margin="36,20,36,20"
+                 x:Name="txt_ten"
+                 FontFamily="Times New Roman"
+                 FontSize="22"/>
+
+        <RadioButton Grid.Column="1"
+                     Grid.Row="2"
+                     FontFamily="Times New Roman"
+                     FontSize="22"
+                     VerticalContentAlignment="Center" 
+                     Margin="36,20,438,20"
+                     x:Name="rb_nam"
+                     GroupName="gioi_tinh">
+            Nam
+        </RadioButton>
+
+        <RadioButton Grid.Column="1"
+                     Grid.Row="2"
+                     FontFamily="Times New Roman"
+                     FontSize="22"
+                     VerticalContentAlignment="Center" 
+                     Margin="237,20,237,20"
+                     x:Name="rb_nu"
+                     GroupName="gioi_tinh">
+            Nữ
+        </RadioButton>
+
+        <CheckBox Grid.Column="1"
+                  Grid.Row="3"
+                  FontFamily="Times New Roman"
+                  FontSize="22"
+                  VerticalContentAlignment="Center" 
+                  Margin="36,19,402,28"
+                  x:Name="cb_tiengAnh">
+            Tiếng Anh
+        </CheckBox>
+
+        <CheckBox Grid.Column="1"
+                  Grid.Row="3"
+                  FontFamily="Times New Roman"
+                  FontSize="22"
+                  VerticalContentAlignment="Center" 
+                  Margin="306,19,132,28"
+                  x:Name="cb_tiengTrung">
+            Tiếng Trung
+        </CheckBox>
+
+        <ComboBox Grid.Column="1"
+                  Grid.Row="4" 
+                  Margin="36,16,36,16"
+                  x:Name="cbb_queQuan">
+            <ComboBoxItem FontFamily="Times New Roman"
+                          FontSize="24">Hà Nội</ComboBoxItem>
+            
+            <ComboBoxItem FontFamily="Times New Roman"
+                          FontSize="24">TP. HCM</ComboBoxItem>
+            
+            <ComboBoxItem FontFamily="Times New Roman"
+                          FontSize="24">Tây Ninh</ComboBoxItem>
+        </ComboBox>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="5" Margin="105,10,48,25" Orientation="Horizontal">
+
+            <Button FontFamily="Times New Roman"
+                    FontSize="22" 
+                    Width="169"
+                    x:Name="btn_thongTin"
+                    Click="btnClick_thongTin" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.354"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.522"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                Xem thông tin
+            </Button>
+
+            <Button FontFamily="Times New Roman"
+                    FontSize="22" 
+                    Width="169" 
+                    Margin="50,0,0,0"
+                    x:Name="btn_nhapLai"
+                    Click="btnClick_nhapLai">
+                Nhập lại
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
