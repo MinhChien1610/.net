@@ -1,0 +1,232 @@
+﻿<Window x:Class="Tuan_6.View.QuanLiTKNH"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tuan_6.View"
+        mc:Ignorable="d"
+        Title="QuanLiTKNH" Height="441" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="188*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Left"
+                Height="56"
+                VerticalAlignment="Center"
+                Width="800"
+                Background="#FF2D4771"
+                Orientation="Horizontal"
+                Grid.ColumnSpan="2">
+            <TextBlock Height="30"
+                   TextWrapping="Wrap"
+                   Text="QUẢN LÝ TÀI KHOẢN NGÂN HÀNG"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Width="335"
+                   HorizontalAlignment="Left"
+                   Margin="20,5,0,0"/>
+
+            <TextBlock Height="25"
+                   TextWrapping="Wrap"
+                   Text="Tổng tiền:"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   Foreground="#FFF7F75A"
+                   Width="70"
+                   VerticalAlignment="Top"
+                   Margin="220,20,0,0"/>
+
+            <TextBlock Text="{Binding TongTien, StringFormat='{}{0:N0} VNĐ'}"
+                   Height="25"
+                   TextWrapping="Wrap"
+                   Width="120"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   Foreground="GreenYellow"
+                   Margin="5,10,0,0"/>
+        </StackPanel>
+
+        <Border BorderBrush="Black"
+            BorderThickness="1"
+            CornerRadius="10"
+            HorizontalAlignment="Center"
+            Height="328"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            Width="260">
+            <TextBlock HorizontalAlignment="Left"
+                   Height="25"
+                   Margin="16,9,0,0"
+                   TextWrapping="Wrap"
+                   Text="Thông tin tài khoản"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   VerticalAlignment="Top"
+                   Width="201"/>
+        </Border>
+
+        <Border BorderBrush="Black"
+            CornerRadius="10"
+            BorderThickness="1"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            Height="328"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            Width="500">
+        </Border>
+
+        <DataGrid ItemsSource="{Binding DanhSach}"
+              SelectedItem="{Binding SelectedItem}"
+              AutoGenerateColumns="False"
+              Grid.Column="1"
+              HorizontalAlignment="Center"
+              Height="263"
+              Margin="0,67,0,0"
+              Grid.Row="1"
+              VerticalAlignment="Top"
+              Width="470">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="STT" Binding="{Binding STT}" Width="30"/>
+                <DataGridTextColumn Header="Số TK" Binding="{Binding SoTK}" Width="100"/>
+                <DataGridTextColumn Header="Khách hàng" Binding="{Binding TenKhachHang}" Width="100"/>
+                <DataGridTextColumn Header="Địa chỉ" Binding="{Binding DiaChi}" Width="100"/>
+                <DataGridTextColumn Header="TP" Binding="{Binding ThanhPho}" Width="50"/>
+                <DataGridTextColumn Header="Số tiền" Binding="{Binding SoTien, StringFormat={}{0:N0}}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"
+                Height="232"
+                Margin="0,57,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Width="230">
+
+            <TextBlock TextWrapping="Wrap"
+                   Text="Số tài khoản"
+                   Height="20"/>
+
+            <TextBox Text="{Binding SoTaiKhoan, UpdateSourceTrigger=PropertyChanged}"
+                 TextWrapping="Wrap"
+                 Width="230"
+                 HorizontalAlignment="Left"
+                 Height="20"
+                 Margin="0,0,0,5"/>
+
+            <TextBlock TextWrapping="Wrap"
+                   Text="Tên khách hàng"
+                   Height="20"/>
+
+            <TextBox Text="{Binding TenKhachHang, UpdateSourceTrigger=PropertyChanged}"
+                 TextWrapping="Wrap"
+                 Width="230"
+                 HorizontalAlignment="Left"
+                 Height="20"
+                 Margin="0,0,0,5"/>
+
+            <TextBlock TextWrapping="Wrap"
+                   Text="Địa chỉ"
+                   Height="20"/>
+
+            <TextBox Text="{Binding DiaChi, UpdateSourceTrigger=PropertyChanged}"
+                 TextWrapping="Wrap"
+                 Width="230"
+                 HorizontalAlignment="Left"
+                 Height="20"
+                 Margin="0,0,0,5"/>
+
+            <TextBlock TextWrapping="Wrap"
+                   Text="Thành phố"
+                   Height="20"/>
+
+            <ComboBox ItemsSource="{Binding ListThanhPho}"
+                  SelectedItem="{Binding ThanhPho}"
+                  Width="230"
+                  HorizontalAlignment="Left"
+                  Height="20"
+                  Margin="0,0,0,5"/>
+
+            <TextBlock TextWrapping="Wrap"
+                   Text="Số tiền"
+                   Height="20"/>
+
+            <TextBox Text="{Binding SoTien, UpdateSourceTrigger=PropertyChanged}"
+                 TextWrapping="Wrap"
+                 Width="230"
+                 HorizontalAlignment="Left"
+                 Height="20"/>
+
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center"
+                Height="25"
+                Margin="0,305,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Width="210"
+                Orientation="Horizontal">
+            <Button Command="{Binding ThemCommand}"
+                Content="Thêm"
+                Width="50"
+                Margin="0,0,30,0"
+                Background="#FF3F98EA"
+                Foreground="White"/>
+
+            <Button Command="{Binding LuuCommand}"
+                Content="Lưu"
+                Width="50"
+                Margin="0,0,30,0"
+                Background="#FF57D235"
+                Foreground="White"/>
+
+            <Button Command="{Binding SuaCommand}"
+                Content="Sửa"
+                Width="50"
+                Background="#FFD5DE36"
+                Foreground="White"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                HorizontalAlignment="Left"
+                Height="30"
+                Margin="25,30,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Width="259">
+
+            <TextBlock HorizontalAlignment="Left"
+                   Height="25"
+                   Margin="5,2,0,0"
+                   TextWrapping="Wrap"
+                   Text="Danh sách tài khoản"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   VerticalAlignment="Top"
+                   Width="150"/>
+
+            <Button Grid.Column="1"
+                Command="{Binding XoaCommand}"
+                Content="Xóa"
+                HorizontalAlignment="Left"
+                FontSize="12"
+                FontWeight="Bold"
+                Height="25"
+                Margin="150,-25,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Foreground="White"
+                Background="#FFEA5151"
+                Width="60"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
