@@ -1,0 +1,171 @@
+﻿<Window x:Class="Tuan_7.Views.QLTaiKhoanNN"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Tuan_7.ViewModels"
+        xmlns:views="clr-namespace:Tuan_7.Views"
+        mc:Ignorable="d"
+        Title="QLTaiKhoanNN"
+        Height="650"
+        Width="1050"
+        MinHeight="650"
+        MinWidth="1050"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F7FB"
+        FontFamily="Segoe UI"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:TaiKhoanViewModel}">
+            <views:UcTaiKhoan/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:GiaoDichViewModel}">
+            <views:UcGiaoDich/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:LichSuViewModel}">
+            <views:UcLichSu/>
+        </DataTemplate>
+
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="46"/>
+            <Setter Property="Margin" Value="0,0,0,14"/>
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="Foreground" Value="#1E293B"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="16,0,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#E0ECFF"/>
+                    <Setter Property="Foreground" Value="#1D4ED8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="46"/>
+            <Setter Property="MinWidth" Value="150"/>
+            <Setter Property="Background" Value="#2563EB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="18,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1D4ED8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="CardBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Padding" Value="22"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="18">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="18"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT PANEL -->
+        <Border Grid.Column="0"
+                Style="{StaticResource CardBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Text="NGÂN HÀNG MINI (MVVM)"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#0F172A"/>
+
+                <TextBlock Grid.Row="2"
+                           Text="Quản lý tài khoản - Giao dịch - Dịch vụ"
+                           FontSize="13"
+                           Foreground="#64748B"/>
+
+                <StackPanel Grid.Row="4">
+                    <TextBlock Text="Chức năng"
+                               Margin="0,0,0,16"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="#1E293B"/>
+
+                    <Button Content="Quản lý tài khoản"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Command="{Binding QuanLyTaiKhoanCommand}"/>
+
+                    <Button Content="Giao dịch (Gửi - Rút - Chuyển)"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Command="{Binding GiaoDichCommand}"/>
+
+                    <Button Content="Lịch sử giao dịch"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Command="{Binding LichSuGiaoDichCommand}"/>
+                </StackPanel>
+
+                <Button Grid.Row="5"
+                        Content="Thoát"
+                        Width="120"
+                        HorizontalAlignment="Left"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Command="{Binding ThoatCommand}"/>
+            </Grid>
+        </Border>
+
+        <!-- RIGHT PANEL -->
+        <Border Grid.Column="2"
+                Style="{StaticResource CardBorderStyle}">
+            <ContentControl Content="{Binding CurrentView}"/>
+        </Border>
+    </Grid>
+</Window>
