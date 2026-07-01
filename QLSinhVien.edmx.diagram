@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9f39694c9b9a486d887e7d5401935d96" Name="Diagram1">
+        <EntityTypeShape EntityType="QLSINHVIENModel.KetQua" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSINHVIENModel.Khoa" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSINHVIENModel.Lop" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSINHVIENModel.MonHoc" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSINHVIENModel.SinhVien" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="QLSINHVIENModel.FK__KetQua__MaMonHoc__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSINHVIENModel.FK__KetQua__MaSinhVi__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSINHVIENModel.FK_Lop_Khoa" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSINHVIENModel.FK_SinhVien_Lop" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

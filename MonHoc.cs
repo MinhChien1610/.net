@@ -12,22 +12,20 @@ namespace Tuan_10.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SinhVien
+    public partial class MonHoc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SinhVien()
+        public MonHoc()
         {
             this.KetQua = new HashSet<KetQua>();
         }
     
-        public string MaSinhVien { get; set; }
-        public string HoTen { get; set; }
-        public string GioiTinh { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
-        public string MaLop { get; set; }
+        public string MaMonHoc { get; set; }
+        public string TenMonHoc { get; set; }
+        public Nullable<int> SoTC { get; set; }
+        public string TinhChat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KetQua> KetQua { get; set; }
-        public virtual Lop Lop { get; set; }
     }
 }
